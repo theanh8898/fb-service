@@ -39,6 +39,14 @@
                     <input type="password" name="confirm_password">
                 </div>
 
+                @if(count($errors->all()) > 0)
+                    @foreach ($errors->all() as $error)
+                        <p class="text-danger font-size-12" style="color: red">
+                            {{ $error }}
+                        </p>
+                    @endforeach
+                @endif
+
                 <button type="submit">Cập nhật</button>
                 <div style="clear: both;"></div>
             </form>

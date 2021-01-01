@@ -1,10 +1,10 @@
 <div class="left-sidebar">
     <div class="logo-img">
-        <img src="{{ asset('images/logo-ii.png') }}" alt="logo">
+        <img src="{{ asset('images/logo-vertical-2.png') }}" alt="logo">
     </div>
     <ul class="menu">
         <li class="menu-item">
-            <a  href="#"><i class="fas fa-home"></i>Trang chủ</a>
+            <a  href="{{ route('dashboard') }}"><i class="fas fa-home"></i>Trang chủ</a>
         </li>
         <li class="menu-item">
             <a href="{{ route('order.index') }}"><i class="fas fa-coins"></i>Nạp số dư</a>
@@ -29,11 +29,13 @@
                 @endforeach
             </ul>
         </li>
+        @if(\Illuminate\Support\Facades\Auth::user()->role == 1)
         <li class="menu-item dropdown-menu">
             <a href="{{ route('service.index') }}">
-                <i class="fab fa-facebook-f"></i>Quan ly Dịch vụ
+                <i class="fab fa-facebook-f"></i>Quản lý Dịch vụ
             </a>
         </li>
+        @endif
         <li class="menu-item dropdown-menu">
             <a href="{{ route(PROFILE_USER) }}"><i class="fas fa-user"></i>Tài khoản</a>
         </li>

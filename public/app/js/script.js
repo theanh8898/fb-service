@@ -82,3 +82,33 @@ if(tabs) {
     })
   })
 }
+
+
+
+// Toggle modal 
+
+function toggleModal() {
+  let elementModal = document.querySelector('.modal');
+
+  if (elementModal) {
+    elementModal.classList.toggle('modal--open')
+  }
+}
+
+// close Modal 
+
+function closeModal () {
+  let elementModal = document.querySelector('.modal--open');
+
+  if(elementModal) {
+    elementModal.classList.remove('modal--open');
+  }
+}
+
+function redirectModal (url) {
+  let elementModal = document.querySelector('.modal--open');
+  if(elementModal) {
+    window.open(url, '_blank');
+    elementModal.classList.remove('modal--open');
+  }
+}

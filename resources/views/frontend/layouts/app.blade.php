@@ -34,7 +34,6 @@
 </head>
 <body class="font-sans antialiased">
     @include('frontend.layouts.header')
-    {{--            @include('layouts.menu')--}}
 
     <div id="app">
         @yield('content')

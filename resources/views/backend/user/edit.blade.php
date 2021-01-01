@@ -12,7 +12,6 @@
                 @csrf
                 @method('PUT')
 
-                <input type="text" id="id_user" name="id_user" value="{{ $user->id }}" class="d-none">
                 <input type="text" id="price_service" name="type" value="admin" class="d-none">
                 <div class="input-group">
                     <label for="name">Tài khoản</label>
@@ -46,7 +45,7 @@
 
                 @if(count($errors->all()) > 0)
                     @foreach ($errors->all() as $error)
-                        <p class="text-danger font-size-12">
+                        <p class="text-danger font-size-12" style="color: red">
                             {{ $error }}
                         </p>
                     @endforeach

@@ -2,9 +2,29 @@
   background-color: $darkBlue;
   border-top:  3px solid $darkBlue;
   .wrapper {
-    padding: 32px 16px 48px;
+    padding: 24px 16px 32px;
     color: #ffffff;
     text-align: center;
+
+    .label {
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      
+      a {
+        color: #ffffff;
+        letter-spacing: 1.4px;
+        font-size: 24px;
+        font-weight: 600;
+        transition: 0.2s;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
     ul {
       list-style: none;
       margin: 0;

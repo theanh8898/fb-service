@@ -3,7 +3,7 @@
 
     <nav class="container container--px flex flex-jc-sb flex-ai-c">
         <a href="/" class="header__logo">
-            <img src="{{ asset('images/logo_nobrand.png') }}" alt="Easybank">
+            <img src="{{ asset('images/logo.png') }}" alt="Easybank">
         </a>
 
         <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">

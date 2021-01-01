@@ -78,10 +78,10 @@ class OrderController extends Controller
         }
 
         session()->flash('response', $response);
-        return redirect()->route('service.order.create', ['service' => $service, 'response' => $response]);
+        return redirect()->route('order.index', ['response' => $response]);
     }
 
-    public function edit($id)
+    public function edit($service, $id)
     {
         $order = Order::find($id);
 

@@ -69,7 +69,7 @@ class UserService extends BaseService
                 'updated_at' => Carbon::now()
             ];
 
-            if ($request->type != 'profile') {
+            if ($request->type != 'profile' && Auth::user()->role == 1) {
                 $userData['amount'] = $request->amount;
             }
 

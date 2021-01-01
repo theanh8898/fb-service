@@ -9,8 +9,13 @@
   transition: all 0.3s;
   
   &.sticky {
-    padding: 0;
+    padding: 8px;
     box-shadow: 0 4px 6px 0 rgba(10,10,10, 0.05);
+
+    .header__logo {
+      width: 160px;
+    }
+
   }
 
   &.open {
@@ -18,6 +23,7 @@
       opacity: 1;
       z-index: 1;
       transition: all 300ms ease-in-out;
+      visibility: visible;
     }
 
     .header__toggle {
@@ -38,12 +44,13 @@
   .overlay {
     opacity: 0;
     z-index: -1;
+    visibility: hidden;
     position: fixed;
-    top: 0;
+    top: 96.68px;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient($darkBlue, transparent);
+    background-color: rgba(0, 0, 0, 0.4);
     transition: all 300ms ease-in-out;
   }
 
@@ -51,17 +58,16 @@
     position: relative;
     background: #ffffff;
     z-index: 2;
-    padding-top: 1.0625rem;
-    padding-bottom: 1.0625rem;
   }
 
   &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 200px;
+    transition: 0.3s;
     img {
-      width: 8.8125rem;
-      height: 1.375rem;
+      width: 100%;
     }
   }
 
@@ -71,7 +77,7 @@
       display: block;
       width: 26px;
       height: 2px;
-      background-color: $darkBlue;
+      background-color: #333333;
       transition: all 300ms ease-in-out;
       transform-origin: 3px 1px;
 

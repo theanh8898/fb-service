@@ -56,7 +56,9 @@
                     <label>Tổng tiền (VND):</label>
                     <strong id="amount_label">{{ $order->amount }}</strong>
                 </div>
+                @if(\Illuminate\Support\Facades\Auth::user()->role == 1)
                 <button type="submit">Cập nhật</button>
+                @endif
                 <div style="clear: both;"></div>
             </form>
 

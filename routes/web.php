@@ -44,10 +44,6 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
     Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
     Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
-
-//    // Socialite Routes
-//    Route::get('login/{provider}', [SocialController::class, 'redirect'])->name('social.login');
-//    Route::get('login/{provider}/callback', [SocialController::class, 'callback']);
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -64,14 +60,9 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('users')->group(function () {
         Route::get('/list', [UserController::class, 'index'])->name(LIST_USER);
         Route::get('/profile', [UserController::class, 'show'])->name(PROFILE_USER);
-        Route::get('/create', 'UserController@create')->name(CREATE_USER);
-        Route::post('/store', 'UserController@store')->name(STORE_USER);
         Route::get('{user}/delete', [UserController::class, 'destroy'])->name(DELETE_USER);
         Route::get('/{id}/edit', [UserController::class, 'edit'])->name(EDIT_USER);
         Route::put('{user}/update', [UserController::class, 'update'])->name(UPDATE_USER);
-        Route::get('/change-password', 'UserController@editPassword')->name(EDIT_PASSWORD);
-        Route::patch('/update-password', 'UserController@changePassword')->name(UPDATE_PASSWORD);
-        Route::post('check-password', 'UserController@checkPass')->name(CHECK_PASSWORD);
     });
 
     Route::prefix('config')->group(function () {
@@ -111,10 +102,6 @@ Route::middleware(['auth'])->group(function () {
                     Route::delete('delete', [OrderController::class, 'delete'])->name('delete');
                 });
             });
-
-            // Schedule
-
-            //Banner
         });
         Route::get('/search', [ServiceController::class, 'search'])->name('search');
     });

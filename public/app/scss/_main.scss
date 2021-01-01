@@ -134,12 +134,20 @@
       box-shadow: 0 8px 10px rgba(0,0,0,.06);
       position: relative;
       width: 100%;
-      padding: 6px 32px;
+      padding: 12px 32px;
       text-align: right;
       font-size: 1rem;
+      color: #ffffff;
+      background: linear-gradient(180deg, #00e99a -20%, #00a0fd 160%, #fbfbfb 100%);
 
       .header-mobile {
         display: none;
+
+        .text {
+          h3 {
+            color: #ffffff;
+          }
+        }
       }
       .wrapper {
         display: flex;
@@ -148,6 +156,7 @@
       }
       .avatar-img {
         margin-right: 10px;
+        display: none;
         img {
           width: 48px;
         }
@@ -157,15 +166,18 @@
         font-weight: 400;
         > span {
           font-weight: 600;
-          color: rgba(0,160,253,1);
+          color: #ffba00;
         }
       }
       
       .coin {
-        color: #2f3542;
+        color: #ffffff;
 
         span {
           color: #f6b93b;
+          font-weight: 600;
+          font-size: 1.25rem;
+          margin-left: 4px;
         }
       }
      
@@ -322,7 +334,7 @@
 
 
 .recharge-page {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   margin: 2rem;
   border-radius: 16px;
   background-color: #ffffff;
@@ -332,7 +344,7 @@
     font-size: 24px;
     font-weight: 500;
     color: #222222;
-    padding: 1rem 0;
+    padding-bottom: 10px;
     
   }
 
@@ -367,8 +379,7 @@
     }
     #tab-1 {
       transform: translateX(0px);
-      
-      
+
       ul {
         padding: 1rem;
         margin-bottom: 1rem;
@@ -377,15 +388,50 @@
         li {
           padding: 6px 12px;
           transition: 0.3s;
+        }
+      }
 
-          > span {
-            color: #000000;
-            margin-right: 4px;
+      .payments {
+
+        .payment {
+          display: flex;
+          align-items: center;
+          margin-bottom: 12px;
+
+          .label {
+            display: flex;
+            align-items: center;
+
+            img {
+              width: 180px;
+              height: 60px;
+            }
+
+            span {
+              margin-right: 10px;
+            }
+            
+            .banner-techcombank {
+              padding: 4px;
+            }
+
+            .banner-vietcombank {
+              padding: 10px 0;
+            }
+
+            .banner-zalopay {
+              padding: 12px;
+            }
+
+            .banner-aripay {
+              padding: 8px 0;
+            }
           }
-          &:hover {
-            color: #FFC312;
+
+          .info {
+            font-weight: 500;
+            color: #333333;
           }
-          
         }
       }
 
@@ -409,6 +455,28 @@
         &:hover {
           color: #FFC312;
         }
+      }
+
+      .descriptions {
+        margin-bottom: 20px;
+        .content {
+          margin-top: 12px;
+          background-color: #f9cd56ed;
+          border: 1px solid #ff3838;
+          padding: 20px;
+          border-radius: 2px;
+          width: fit-content;
+          color: #ffffff;
+
+          span {
+            color: $primary-b;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .note {
+        color: #333333;
       }
     }
 
@@ -559,7 +627,7 @@
 
 .services-page{
   margin: 2rem;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   background-color: #ffffff;
   border-radius: 1rem;
 
@@ -570,9 +638,21 @@
     margin-bottom: 20px;
   }
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
   .service-form  {
     position: relative;
-    width: 720px;
+    flex: 1 1 60%;
+    padding-right: 30px;
+
+    form {
+    
+      max-width: 100%;
+    }
 
     .input-group {
       margin-bottom: 12px;
@@ -614,7 +694,75 @@
     }
   }
 
+  &__right-content {
+    flex: 1 1 30%;
+    padding-left: 30px;
+
+    .title {
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+
+    .notes {
+      margin: 0;
+      padding: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ff4d4d;
+      background-color: #FFC31266;
+
+      .note {
+        margin-bottom: 10px;
+        color: #333333;
+
+        .link {
+          color: $primary-b;
+        }
+      }
+    }
+  }
+
+
 }
+
+// Responsive Service Pages
+
+@media  (min-width: 1024px) and (max-width: 1300px) {
+  .services-page {
+
+    &__wrapper {
+      display: block;
+    }
+
+    &__right-content {
+      padding: 1rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+
+  }
+
+}
+
+
+@media  (max-width: 978px) {
+  .services-page {
+   
+    &__wrapper {
+      display: block;
+    }
+
+    &__right-content {
+      padding: 1rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+
+  }
+
+}
+
+
 
 .support-page {
   margin: 2rem;
@@ -664,6 +812,7 @@
     position: relative;
     width: 620px;
     padding: 2rem 1rem;
+    margin: auto;
 
     .input-group {
       margin-bottom: 20px;
@@ -870,6 +1019,43 @@
 }
 
 
+
+.contact-wrapper {
+  padding: 1rem 0;
+
+  .content {
+    span {
+      color: rgba(0,160,253,1);
+      font-weight: 600;
+    }
+    margin-bottom: 1.5rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      outline: none;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .cancel {
+      margin-right: 2rem;
+      background: #9b9b9b !important;
+      border: 1px solid #9b9b9b;
+      color: #F5F5F5;
+    }
+
+    .accept {
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+}
 
 
 

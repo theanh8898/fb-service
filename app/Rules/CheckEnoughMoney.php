@@ -41,6 +41,6 @@ class CheckEnoughMoney implements Rule
      */
     public function message()
     {
-        return 'Ko du tien roi. Nap them di ban oi!';
+        return 'Số dư tài khoản không đủ! Vui lòng nạp thêm coin để sửa dụng dịch vụ!';
     }
 }

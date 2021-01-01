@@ -6,7 +6,6 @@
     <div class="content">
         <div class="recharge-page">
             <ul class="navbar-tabs">
-                <li data-tab-target="#tab-1">Nạp tiền</li>
                 <li class="active" data-tab-target="#tab-2">Danh sách người dùng</li>
             </ul>
 

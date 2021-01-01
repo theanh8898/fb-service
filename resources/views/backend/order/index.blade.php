@@ -13,26 +13,58 @@
             <div class="content-tabs">
                 <div id="tab-1"  class="active" data-tab-content>
                     <strong>Chuyển khoản ngân hàng</strong>
-                    <ul>
-                        <li><span>Techcombank:</span> 19032574065011 BUI KIM PHUONG</li>
-                        <li><span>Vietcombank:</span> 1031000011505 BUI KIM PHUONG</li>
-                        <li><span>ZaloPay:</span> 0387853737 BUI KIM PHUONG</li>
-                        <li><span>AirPay:</span> 0387853737 BUI KIM PHUONG</li>
-                        <li><span>Momo:</span> 0387853737 BUI KIM PHUONG</li>
+                    <ul class="payments">
+                        <li class="payment">
+                            <div class="label">
+                                <img class="banner-techcombank" src="{{ asset('images/techcombank.png') }}" alt="Techcombank">
+                                <span>Techcombank:</span>
+                            </div>
+                            <div class="info">19032574065011 BUI KIM PHUONG</div>
+                        </li>
+                        <li class="payment">
+                            <div class="label">
+                                <img class="banner-vietcombank" src="{{ asset('images/Vietcombank_Logo.png') }}" alt="Vietcombank">
+                                <span>Vietcombank:</span>
+                            </div>
+                            <div class="info">1031000011505 BUI KIM PHUONG</div>
+                        </li>
+                        <li class="payment">
+                            <div class="label">
+                                <img class="banner-zalopay" src="{{ asset('images/ZaloPay_Logo.png') }}" alt="ZaloPay">
+                                <span>ZaloPay:</span>
+                            </div>
+                            <div class="info">0387853737 BUI KIM PHUONG</div>
+                        </li>
+                        <li class="payment">
+                            <div class="label">
+                                <img class="banner-aripay" src="{{ asset('images/aripay.jpg') }}" alt="AriPay">
+                                <span>AirPay:</span>
+                            </div>
+                            <div class="info"> 0387853737 BUI KIM PHUONG </div>
+                        </li>
+                        <li class="payment">
+                            <div class="label">
+                                <img class="banner-momo" src="{{ asset('images/momo.png') }}" alt="MoMo">
+                                <span>Momo:</span>
+                            </div>
+                            <div class="info">
+                                0387853737 BUI KIM PHUONG
+                            </div>
+                        </li>
                     </ul>
 
 
-                    <div>
+                    <div class="descriptions">
                         <strong>Nội dung chuyển khoản:</strong>
-                        <p>Tên Website + Tên Tài khoản (ví dụ: autofb.com hoangha)</p>
+                        <div class="content">Tên <span>trustfb.vn</span> + Tên Tài khoản (ví dụ: autofb.com hoangha)</div>
 
                     </div>
 
-                    <div>
+                    <div class="note">
                         <strong>Lưu ý:</strong>
                         <p>- Ghi đúng nội dung chuyển khoản</p>
                         <p>- Sau 10 phút từ khi tiền trong tài khoản bạn bị trừ mà chưa được cộng tiền, vui lòng
-                            nhấn <a class="link" target="_blank" href="https://chat.zalo.me/">vào đây</a> để được hỗ trợ.
+                            nhấn <a class="link" target="_blank" href="https://zalo.me/0387853737">vào đây</a> để được hỗ trợ.
                         </p>
                     </div>
                 </div>
@@ -43,8 +75,7 @@
 
                         <form method="GET" action="{{ route('order.search') }}">
                             <div class="label">
-                                <i class="fas fa-filter"></i>
-                                <button type="submit">Bộ lọc</button>
+                                <button type="submit">Lọc</button>
                             </div>
                             @csrf
                             <div class="input-group">
@@ -98,12 +129,6 @@
                             <div class="cell">
                                 <span>Created At</span>
                             </div>
-{{--                            <div class="cell">--}}
-{{--                                <span>Nội dung</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="cell">--}}
-{{--                                <span>Ghi chú</span>--}}
-{{--                            </div>--}}
                             <div class="cell">
                                 <span>Trạng thái</span>
                             </div>
@@ -134,18 +159,17 @@
                                 <div class="cell" data-title="Created At">
                                     {{ $order->created_at->format('Y-m-d H:i:s') }}
                                 </div>
-{{--                                <div class="cell" data-title="Nội dung">--}}
-{{--                                    {{ $order->content }}--}}
-{{--                                </div>--}}
-{{--                                <div class="cell" data-title="Ghi chú">--}}
-{{--                                    {{ $order->note }}--}}
-{{--                                </div>--}}
                                 <div class="cell" data-title="Trạng thái">
                                     {{ $order->status }}
                                 </div>
                                 <div class="cell" data-title="Hanh dong">
-                                    <a href="{{ route('service.order.edit', ['service' => $order->service_id, 'order' => $order]) }}" class="btn">Chỉnh Sữa</a>
-                                    <a href="{{ route(DELETE_USER, ['user' => $order]) }}" class="btn" title="Cần nạp  gấp ngay lập tức">Xóa</a>
+                                    <a href="{{ route('service.order.edit', ['service' => $order->service_id, 'order' => $order]) }}" class="btn">
+                                        @if(\Illuminate\Support\Facades\Auth::user()->role == 1)
+                                            Chỉnh Sữa
+                                        @else
+                                            Xem chi tiết
+                                        @endif
+                                    </a>
                                 </div>
                             </div>
 

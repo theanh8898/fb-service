@@ -6,7 +6,7 @@
 
     <section class="hero">
         <div class="">
-            <img src="{{ asset('images/no-banner.jpg') }}" alt="banner">
+            <img src="{{ asset('images/banner.jpg') }}" alt="banner">
         </div>
     </section>
 
@@ -34,7 +34,7 @@
                     <h3 class="service__label">Tăng like Fanpage</h3>
                     <p class="service__price">399.000đ</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@
                     <h3 class="service__label">Tăng like bài viết</h3>
                     <p class="service__price">399.000đ</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
 
@@ -57,7 +57,7 @@
                     <h3 class="service__label">Tăng Commnet Seeding Bài viết</h3>
                     <p class="service__price">399.000đ</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                     <h3 class="service__label">Tăng Comment Seeding Livestream</h3>
                     <p class="service__price">399.000đ</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@
                     <h3 class="service__label">Share Live vào nhiều nhóm</h3>
                     <p class="service__price">399.000đ</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
                     <h3 class="service__label">Share Live lên nhiều trang cá nhân</h3>
                     <p class="service__price">399.000đ</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
 
@@ -105,7 +105,7 @@
                     <h3 class="service__label">Dịch vụ khác</h3>
                     <p class="service__price">Coming soon</p>
                     <div class="service__btn">
-                        <a href="./login.html" class="btn-link">Mua ngay</a>
+                        <a href="{{ route('login') }}" class="btn-link">Mua ngay</a>
                     </div>
                 </div>
             </div>
