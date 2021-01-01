@@ -1,0 +1,24 @@
+.footer {
+  background-color: $darkBlue;
+  border-top:  3px solid $darkBlue;
+  .wrapper {
+    padding: 32px 16px 48px;
+    color: #ffffff;
+    text-align: center;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 6px;
+      }
+    }
+  }
+  .copyright {
+    padding:6px 0;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    background-color: #05c46b;
+  }
+}
